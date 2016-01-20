@@ -5,7 +5,8 @@ require 'pry-byebug'
 require 'csv'
 
 Job = Struct.new(:title, :company, :job_id, :company_id, :location, :link, :date)
-class WebScraper
+
+class DiceScraper
   attr_accessor :job_list, :agent, :search_link, :home_page, :search_query, :search_form
 
   def initialize
@@ -78,7 +79,7 @@ class WebScraper
   end
 
   def to_csv
-    CSV.open('csv_file.csv', 'a') do |csv|
+    CSV.open('dice.csv', 'a') do |csv|
       @job_list.each do |job|
         csv << [job.title, job.company, job.company_id, job.job_id, job.location, job.link, job.date]
       end
