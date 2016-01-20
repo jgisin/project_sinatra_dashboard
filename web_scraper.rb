@@ -107,12 +107,12 @@ class WebScraper
 
 end
 
-web = WebScraper.new
-web.search("web", "new york")
+# web = WebScraper.new
+# web.search("ruby", "san francisco")
 
-web.iterate
-print web.job_list
-web.to_csv
+# web.iterate
+# print web.job_list
+# web.to_csv
 
 # #Job Name
 # web.search_link = web.agent.get(web.job_link(5))
