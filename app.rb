@@ -10,15 +10,21 @@ require 'pry-byebug'
 require 'csv'
 require_relative './dice_scraper.rb'
 require_relative './glassdoor_scraper.rb'
+require_relative './freegeo.rb'
 
-csv = nil
+@csv = nil
+@dice = Dicescraper.new
+@geo = FreegeoAPI.new
+
 
 get '/' do
 
-  erb :index, :locals => {:csv => csv}
+  erb :index
 end
 
 post '/' do
+  
+  @dice.search(params[:prompt], @geo.city_state)
 
   #params
     #scarper.search(param1, param2)
