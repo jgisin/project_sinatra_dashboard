@@ -12,21 +12,16 @@ require_relative './dice_scraper.rb'
 require_relative './glassdoor_scraper.rb'
 require_relative './freegeo.rb'
 
-@csv = nil
-@dice = Dicescraper.new
-@geo = FreegeoAPI.new
-
-
 get '/' do
-
   erb :index
 end
 
 post '/' do
-  
-  @dice.search(params[:prompt], @geo.city_state)
+  dice = DiceScraper.new
+  geo = FreegeoAPI.new
+  geo.get_location
+  dice.output_csv(params[:prompt], geo.city_state)
+  csv = CSV.read("dice.csv")
 
-  #params
-    #scarper.search(param1, param2)
-
+  erb :results, :locals => {:csv => csv}
 end

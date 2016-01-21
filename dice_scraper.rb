@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'mechanize'
-require 'pry-byebug'
 require 'csv'
 require_relative 'glassdoor_scraper.rb'
 
@@ -107,14 +106,18 @@ class DiceScraper
     time
   end
 
+  def output_csv(query, location)
+    search(query, location)
+    iterate
+    to_csv
+  end
+
 
 end
 
 # web = WebScraper.new
 # web.search("ruby", "san francisco")
-
 # web.iterate
-# print web.job_list
 # web.to_csv
 
 # #Job Name

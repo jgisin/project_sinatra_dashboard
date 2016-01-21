@@ -1,7 +1,6 @@
-require 'httparty'
-require 'pry-byebug'
 require 'figaro'
 require 'pp'
+
 
 Figaro.application = Figaro::Application.new(
   environment: "development",

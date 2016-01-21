@@ -1,0 +1,17 @@
+<table style="width:100%">
+  <tr>
+    <th>Job Title</th>
+    <th>Company Name</th> 
+    <th>Job Description</th>
+  </tr>
+
+<% csv[0].length.times do |row| %>
+  <%3.times do |num| %>
+    <tr>
+      <td><%= csv[num-1][row-1] %></td>
+      <td><%= csv[num-1][row-1] %></td>
+      <td><%= csv[num-1][row-1] %></td> 
+    </tr>
+  <% end %>
+<% end %>
+</table>
