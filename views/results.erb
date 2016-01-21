@@ -1,17 +1,15 @@
 <table style="width:100%">
   <tr>
     <th>Job Title</th>
-    <th>Company Name</th> 
-    <th>Job Description</th>
+    <th>Company</th>
+    <th>Date</th>
   </tr>
 
-<% csv[0].length.times do |row| %>
-  <%3.times do |num| %>
+<% csv.each_with_index do |job, index| %>
     <tr>
-      <td><%= csv[num-1][row-1] %></td>
-      <td><%= csv[num-1][row-1] %></td>
-      <td><%= csv[num-1][row-1] %></td> 
+      <td><a href = <%= job[5] %>> <%= job[0] %></a></td>
+      <td><%= job[1] %></td>
+      <td><%= job[6] %></td>
     </tr>
-  <% end %>
 <% end %>
 </table>

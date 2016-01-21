@@ -79,7 +79,7 @@ class DiceScraper
   end
 
   def to_csv
-    CSV.open('dice.csv', 'a') do |csv|
+    CSV.open('dice.csv', 'w') do |csv|
       @job_list.each do |job|
         new_glass = GlassdoorAPI.new(job.company, job.location)
         new_glass.get_company 
