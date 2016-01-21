@@ -12,6 +12,8 @@ require_relative './dice_scraper.rb'
 require_relative './glassdoor_scraper.rb'
 require_relative './freegeo.rb'
 
+
+
 get '/' do
   erb :index
 end

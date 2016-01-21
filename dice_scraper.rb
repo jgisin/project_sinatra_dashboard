@@ -2,7 +2,7 @@ require 'rubygems'
 require 'bundler/setup'
 require 'mechanize'
 require 'csv'
-require_relative 'glassdoor_scraper.rb'
+# require_relative './glassdoor_scraper.rb'
 
 Job = Struct.new(:title, :company, :job_id, :company_id, :location, :link, :date)
 
@@ -81,8 +81,9 @@ class DiceScraper
   def to_csv
     CSV.open('dice.csv', 'a') do |csv|
       @job_list.each do |job|
-        new_glass = GlassdoorAPI.new(job.company, job.location) 
-        csv << [job.title, job.company, job.company_id, job.job_id, job.location, job.link, job.date, new_glass.get_rating, new_glass.get_featured_review]
+        new_glass = GlassdoorAPI.new(job.company, job.location)
+        new_glass.get_company 
+        csv << [job.title, job.company, job.company_id, job.job_id, job.location, job.link, job.date]
       end
       csv
     end
