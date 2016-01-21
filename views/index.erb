@@ -1,5 +1,8 @@
-<% csv.each do |job| %>
+<h1>Please type your job search query</h1>
 
-  <%= "#{job[0]}" %><br />
-  
-<% end %>
+<form method = "post">
+
+ <input type ="text" name = "prompt" ><br>
+ <input type="submit" value="Submit">
+
+</form>

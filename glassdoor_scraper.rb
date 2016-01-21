@@ -1,4 +1,3 @@
-require 'httparty'
 require 'pry-byebug'
 require 'figaro'
 require 'pp'
@@ -54,7 +53,7 @@ class GlassdoorAPI
 end
 
 
-gd = GlassdoorAPI.new('SalesTalent Inc','Mercer Island')
-gd.get_company
-pp gd.get_rating
-pp gd.get_featured_review
+# gd = GlassdoorAPI.new('SalesTalent Inc','Mercer Island')
+# gd.get_company
+# pp gd.get_rating
+# pp gd.get_featured_review

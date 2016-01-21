@@ -1,10 +1,17 @@
 require 'sinatra'
 require 'sinatra/reloader'
-require_relative 'web_scraper.rb'
 require 'pry-byebug'
 require 'thin'
+require 'httparty'
+require 'rubygems'
+require 'bundler/setup'
+require 'mechanize'
+require 'pry-byebug'
+require 'csv'
+require_relative './dice_scraper.rb'
+require_relative './glassdoor_scraper.rb'
 
-csv = CSV.read("csv_file.csv")
+csv = nil
 
 get '/' do
 
